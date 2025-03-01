@@ -1,3 +1,4 @@
+
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -10,11 +11,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
-import logo from "../Assets/Images/black (2).png"
-import Stack from '@mui/material/Stack';
-import SvgIcon from '@mui/material/SvgIcon';
-
-
+import logo from "../Assets/Images/black (2).png";
 
 const pages = [
   { title: "Home", path: "/" },
@@ -22,12 +19,8 @@ const pages = [
   { title: "Shop", path: "/shop" },
 ];
 
-
-
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-
-  
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -38,7 +31,15 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="static" elevation={1} sx={{ backgroundColor: "white", p: 2 }}>
+    <AppBar
+      position="static"
+      elevation={0}
+      sx={{
+        backgroundColor: "#F5F5DC", // Beige background
+        borderBottom: "1px solid #D2691E", // Brown border
+        p: 2,
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* Logo for larger screens */}
@@ -70,7 +71,7 @@ function NavBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              sx={{ color: "black" }}
+              sx={{ color: "#D2691E" }}
             >
               <MenuIcon />
             </IconButton>
@@ -97,7 +98,7 @@ function NavBar() {
                   key={index}
                   onClick={handleCloseNavMenu}
                 >
-                  <Typography sx={{ textAlign: "center" }}>
+                  <Typography sx={{ textAlign: "center", color: "#8B4513" }}>
                     {page.title}
                   </Typography>
                 </MenuItem>
@@ -115,17 +116,23 @@ function NavBar() {
           >
             {pages.map((page, index) => (
               <Button
-                variant="outlined" href="#outlined-buttons"
+                variant="text"
                 component={Link}
                 to={page.path}
                 key={index}
                 onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
-                  color: "darkblue",
-                  display: "block",
-                  fontWeight: "600",
+                  color: "#8B4513",
+                  fontWeight: "bold",
                   fontSize: "16px",
+                  textTransform: "uppercase",
+                  borderBottom: "2px solid transparent",
+                  transition: "border-color 0.3s, color 0.3s",
+                  "&:hover": {
+                    borderColor: "#D2691E",
+                    color: "#D2691E",
+                  },
                 }}
               >
                 {page.title}
