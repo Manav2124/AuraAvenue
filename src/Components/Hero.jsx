@@ -1,96 +1,7 @@
-// import { Box, Typography, Button, Container } from "@mui/material";
-// import React from "react";
-// import heroBg from "../Assets/Images/black-friday-elements-assortment.jpg";
-
-
-// export default function Hero() {
-//   return (
-//     <Box
-//       sx={{
-//         width: "903",
-//         height: "903px",
-//         objectFit:"cover",
-//         ObjectPosition:" 50% 50%",
-//         backgroundPosition: "right center",
-//         backgroundSize: "cover",
-//         backgroundImage: `url(${heroBg})`,
-//         display: "flex",
-//         flexDirection: "column",
-//         justifyContent: "center",
-//         alignItems: "flex-start",
-//         textAlign: "left",
-//         color: "sienna ",
-//         padding: "20px 50px",
-
-        
-//       }}
-//     >
-//       <Container maxWidth="md">
-//         <Typography
-      
-          
-//           sx={{
-//             fontWeight: "bold",
-//             fontSize: { xs: "2rem", sm: "3rem" },
-//             textTransform: "uppercase",
-//             color: "white",
-//             marginBottom: "1rem",
-//           }}
-//           gutterBottom
-//         >
-//           Welcome To AuraAvenue
-//         </Typography>
-        
-//         <Typography
-//           sx={{
-//             fontWeight: "bold",
-//             fontSize: { xs: "4rem", sm: "6rem" },
-//             color: "linen ",
-//             marginBottom: "1rem",
-//             lineHeight: 1,
-//           }}
-//           gutterBottom
-//         >
-//           "Your Style, Your Way!"
-//         </Typography>
-//         <Typography
-//           sx={{
-//             fontSize: { xs: "1rem", sm: "1.2rem" },
-//             color: "black",
-//             marginBottom: "2rem",
-//           }}
-//           gutterBottom
-//         >
-          
-//         </Typography>
-//         {/* <Button
-//           variant="contained"
-//           color="secondary"
-//           sx={{
-//             fontSize: "1rem",
-//             padding: "10px 20px",
-//             borderRadius: "25px",
-//             boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
-//             backgroundColor: "#fff",
-//             color: "#000",
-//             "&:hover": {
-//               backgroundColor: "#e0e0e0",
-//             },
-//           }}
-//         >
-          
-//         </Button> */}
-//       </Container>
-//     </Box>
-//   );
-// }
-
-
-
 import { Box, Typography, Button, Container } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-import heroBg from "../Assets/Images/black-friday-elements-assortment.jpg";
+import heroBg from "../Assets/Images/black-friday-elements-assortment.jpg"// Update the image path
 
 export default function Hero() {
   return (
@@ -98,7 +9,7 @@ export default function Hero() {
       sx={{
         width: "100%",
         height: "90vh",
-        backgroundImage: `url(${heroBg})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroBg})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         display: "flex",
@@ -106,18 +17,20 @@ export default function Hero() {
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
-        color: "sienna",
+        color: "white",
         padding: "20px 50px",
       }}
     >
       <Container maxWidth="md">
         <Typography
           sx={{
+            fontFamily: "'Playfair Display', serif", // Change font family
             fontWeight: "bold",
-            fontSize: { xs: "2rem", sm: "3rem" },
+            fontSize: { xs: "2.5rem", sm: "4rem" },
             textTransform: "uppercase",
             color: "white",
             marginBottom: "1rem",
+            letterSpacing: "2px",
           }}
           gutterBottom
         >
@@ -126,9 +39,10 @@ export default function Hero() {
 
         <Typography
           sx={{
+            fontFamily: "'Dancing Script', cursive", // Change font family
             fontWeight: "bold",
-            fontSize: { xs: "4rem", sm: "6rem" },
-            color: "linen",
+            fontSize: { xs: "3rem", sm: "5rem" },
+            color: "lightgoldenrodyellow",
             marginBottom: "1rem",
             lineHeight: 1,
           }}
@@ -139,31 +53,31 @@ export default function Hero() {
 
         <Typography
           sx={{
-            fontSize: { xs: "1rem", sm: "1.2rem" },
-            color: "black",
+            fontSize: { xs: "1.2rem", sm: "1.5rem" },
+            color: "lightgray",
             marginBottom: "2rem",
           }}
           gutterBottom
         >
-          {/* Additional text can go here */}
+          Discover the latest trends and express your unique style.
         </Typography>
 
         <Button
           component={Link}
           to="/shop"
           variant="contained"
-          color="secondary"
           sx={{
-            fontSize: "1rem",
-            padding: "10px 20px",
-            borderRadius: "25px",
-            boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
-            backgroundColor: "#fff",
-            color: "#000",
+            fontSize: "1.2rem",
+            padding: "15px 30px",
+            borderRadius: "30px",
+            boxShadow: "4px 4px 8px rgba(0, 0, 0, 0.4)",
+            backgroundColor: "gold",
+            color: "black",
             "&:hover": {
-              backgroundColor: "#e0e0e0",
+              backgroundColor: "darkgoldenrod",
+              boxShadow: "6px 6px 12px rgba(0, 0, 0, 0.5)",
             },
-            marginTop: "20px", // Add some space above the button
+            marginTop: "20px",
           }}
         >
           Shop Now
@@ -172,4 +86,3 @@ export default function Hero() {
     </Box>
   );
 }
-
